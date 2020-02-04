@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BlogLoaderService } from './blog-loader.service';
+import { TableLoaderService } from './table-loader.service';
 
 describe('BlogLoaderService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BlogLoaderService = TestBed.get(BlogLoaderService);
+    const service: TableLoaderService = TestBed.get(TableLoaderService);
     expect(service).toBeTruthy();
   });
 });

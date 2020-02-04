@@ -1,5 +1,28 @@
-h1 {
-  margin-left: 9em;
-  padding-top: 2em;
+
+.main {
+  padding-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+#title {
+  margin-bottom: 7em;
+  text-align: center;
+  font-family: "JetBrains Mono";
+}
+
+#menuButton {
+
+}
+
+mat-toolbar {
+  margin-bottom: 1em;
+}
+
+
+#user {
+  margin-left: 70%;
+  color: gray;
 }
 

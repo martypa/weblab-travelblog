@@ -5,7 +5,7 @@ import {BlogEntry} from '../dashboard/BlogEntry';
 @Injectable({
   providedIn: 'root'
 })
-export class BlogLoaderService {
+export class TableLoaderService {
 
   private blogMock: BlogTableMock = new BlogTableMock();
 

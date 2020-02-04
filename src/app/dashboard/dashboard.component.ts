@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {BlogLoaderService} from '../services/blog-loader.service';
+import {TableLoaderService} from '../services/table-loader.service';
 import {BlogEntry} from './BlogEntry';
+import {AppComponent} from '../app.component';
 
 
 @Component({
@@ -10,11 +11,13 @@ import {BlogEntry} from './BlogEntry';
 })
 export class DashboardComponent implements OnInit {
 
+  title = 'Welcome to Patrick\'s travel blog';
   displayedColumns: string[] = ['Title', 'Destination', 'Date', 'Length'];
   dataSource: BlogEntry[];
+  private app: AppComponent
 
   constructor(
-    private blogLoaderService: BlogLoaderService,
+    private blogLoaderService: TableLoaderService,
   ) {}
 
   ngOnInit() {
