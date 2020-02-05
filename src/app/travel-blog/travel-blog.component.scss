@@ -1,3 +1,6 @@
+
+$margin-left-right: 3em;
+
 h2 {
   padding-top: 1em;
   text-align: center;
@@ -6,7 +9,7 @@ h2 {
 }
 
 .header {
-  margin-top: 5em;
+  margin-top: 3em;
   background-color: #f2f2f2;
 }
 
@@ -19,16 +22,46 @@ h2 {
 
 #location {
   flex: auto;
-  margin-left: 2em;
+  margin-left: $margin-left-right;
 }
 
 #duration {
   flex: revert;
-  margin-right: 2em;
+  margin-right: $margin-left-right;
 }
 
 #discription {
   margin-top: 3em;
-  margin-left: 2em;
+  margin-left: $margin-left-right;
   padding-bottom: 3em;
+}
+
+.entrySection {
+  background-color: #f2f2f2;
+  margin-top: 2em;
+  margin-bottom: 10em;
+  padding-bottom: 2em;
+}
+
+.entryTitle {
+  margin-left: $margin-left-right;
+  display: flex;
+  font-family: "JetBrains Mono ExtraBold";
+}
+
+#entryTitle {
+  padding-left: 1em;
+}
+
+.blogEntryPicture {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 2em auto;
+}
+
+.blogEntryText {
+  margin-left: $margin-left-right;
+  margin-right: $margin-left-right;
+  text-align: justify;
 }
