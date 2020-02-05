@@ -3,14 +3,37 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  _MatMenuDirectivesModule,
+  MatButtonModule, MatCardModule,
+  MatIconModule,
+  MatMenuModule,
+  MatRippleModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
+import { TravelBlogComponent } from './travel-blog/travel-blog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    TravelBlogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatRippleModule,
+    _MatMenuDirectivesModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
