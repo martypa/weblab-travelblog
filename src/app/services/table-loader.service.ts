@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BlogTableMock} from '../Mocks/BlogTableMock';
+import {BlogTableMock} from '../mocks/BlogTableMock';
 import {BlogEntry} from '../dashboard/BlogEntry';
 
 @Injectable({

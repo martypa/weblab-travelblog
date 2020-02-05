@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   _MatMenuDirectivesModule,
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatIconModule,
   MatMenuModule,
   MatRippleModule,
@@ -33,6 +33,7 @@ import { TravelBlogComponent } from './travel-blog/travel-blog.component';
     MatMenuModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

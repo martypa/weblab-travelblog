@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BlogDetailLoaderService} from '../services/blog-detail-loader.service';
+import {BlogHeaderModel} from './BlogHeaderModel';
 
 @Component({
   selector: 'app-travel-blog',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelBlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private blogLoader: BlogDetailLoaderService) { }
+
+  public headermodel: BlogHeaderModel;
 
   ngOnInit() {
+    this.headermodel = this.blogLoader.getDetailBlogMock();
   }
 
 }

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {TableLoaderService} from '../services/table-loader.service';
 import {BlogEntry} from './BlogEntry';
 import {AppComponent} from '../app.component';
-
+import {BlogDetailLoaderService} from '../services/blog-detail-loader.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private blogLoaderService: TableLoaderService,
+    private blogdetailLoader: BlogDetailLoaderService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -30,6 +33,7 @@ export class DashboardComponent implements OnInit {
   }
 
   showClickedBlog(row: any) {
+      this.router.navigateByUrl('blogDetail');
       console.log(row);
   }
 }
