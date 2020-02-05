@@ -13,14 +13,22 @@ h2 {
 .headersecond {
   font-size: larger;
   font-family: "JetBrains Mono";
-
+  display: flex;
+  flex-direction: row;
 }
 
 #location {
+  flex: auto;
+  margin-left: 2em;
 }
 
 #duration {
+  flex: revert;
+  margin-right: 2em;
 }
 
 #discription {
+  margin-top: 3em;
+  margin-left: 2em;
+  padding-bottom: 3em;
 }
