@@ -30,7 +30,7 @@ class BlogRepositry {
 
 
   async getClient() {
-    return await mongo.connect(url).catch(err => concole.log(err));
+    return await mongo.connect(url).catch(err => console.log(err));
   }
 
 
