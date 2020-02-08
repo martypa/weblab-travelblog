@@ -28,5 +28,5 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"(click)="showClickedBlog(row)"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/blogDetail/{{row.id}}"></tr>
 </table>

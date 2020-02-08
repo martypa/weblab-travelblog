@@ -1,5 +1,5 @@
 import {BlogHeaderModel} from '../travel-blog/BlogHeaderModel';
-import {BlogEntryModel} from '../travel-blog-entry/BlogEntryModel';
+import {BlogEntryModel} from '../travel-blog/travel-blog-entry/BlogEntryModel';
 
 
 export class BlogDetailMock {

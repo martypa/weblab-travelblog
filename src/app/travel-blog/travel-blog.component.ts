@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogDetailLoaderService} from '../services/blog-detail-loader.service';
 import {BlogHeaderModel} from './BlogHeaderModel';
-import {BlogEntryModel} from '../travel-blog-entry/BlogEntryModel';
+import {BlogEntryModel} from './travel-blog-entry/BlogEntryModel';
+import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
+import {filter, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-travel-blog',
@@ -10,14 +12,22 @@ import {BlogEntryModel} from '../travel-blog-entry/BlogEntryModel';
 })
 export class TravelBlogComponent implements OnInit {
 
-  constructor(private blogLoader: BlogDetailLoaderService) { }
+  constructor(
+    private blogLoader: BlogDetailLoaderService,
+    private route: ActivatedRoute,
+  ) { }
 
-  public headermodel: BlogHeaderModel;
-  public posts: BlogEntryModel[];
+  public headermodel: BlogHeaderModel = {title: '', description: '', duration: '', location: ''};
+  public posts: BlogEntryModel[] = [{title: '', date: '', picDiscription: '', picFile: '', text: ''}];
 
   ngOnInit() {
-    this.headermodel = this.blogLoader.getDetailBlogHeaderMock();
-    this.posts = this.blogLoader.getDetailBlogEntryMock();
+    const id = this.route.snapshot.paramMap.get('id');
+    this.blogLoader.getBlogHeader(Number(id)).subscribe(header => {
+      this.headermodel = header;
+    });
+    this.blogLoader.getBlogEntries(Number(id)).subscribe(entries => {
+      this.posts = entries;
+    });
   }
 
 }

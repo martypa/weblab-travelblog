@@ -7,7 +7,7 @@ import {TravelBlogComponent} from './travel-blog/travel-blog.component';
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'blogDetail', component: TravelBlogComponent},
+  {path: 'blogDetail/:id', component: TravelBlogComponent},
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 
-export interface BlogEntry {
+export interface BlogTableModel {
   id: number;
   title: string;
   destination: string;

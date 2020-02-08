@@ -15,7 +15,8 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { TravelBlogComponent } from './travel-blog/travel-blog.component';
-import { TravelBlogEntryComponent } from './travel-blog-entry/travel-blog-entry.component';
+import { TravelBlogEntryComponent } from './travel-blog/travel-blog-entry/travel-blog-entry.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TravelBlogEntryComponent } from './travel-blog-entry/travel-blog-entry.
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
