@@ -72,7 +72,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "weblab-travelblog:build:production"
+              "browserTarget": "weblab-travelblog:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
