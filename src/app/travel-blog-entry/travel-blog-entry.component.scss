@@ -1,0 +1,31 @@
+
+$margin-left-right: 3em;
+
+.entrySection {
+  background-color: #f2f2f2;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.entryTitle {
+  margin-left: $margin-left-right;
+  display: flex;
+  font-family: "JetBrains Mono ExtraBold";
+}
+
+#entryTitle {
+  padding-left: 1em;
+}
+
+.blogEntryPicture {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 2em auto;
+}
+
+.blogEntryText {
+  margin-left: $margin-left-right;
+  margin-right: $margin-left-right;
+  text-align: justify;
+}

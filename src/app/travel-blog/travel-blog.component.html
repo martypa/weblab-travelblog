@@ -7,16 +7,11 @@
   <p id="discription">{{headermodel.description}}</p>
 </div>
 
+<div *ngFor="let post of posts">
+  <app-travel-blog-entry [title]="post.title"
+                         [date]="post.date"
+                         [pictureFile]="post.picFile"
+                         [pictureDiscription]="post.picDiscription"
+                         [text]="post.text"></app-travel-blog-entry>
 
-<div class="entrySection">
-  <div>
-    <div class="entryTitle">
-      <p>{{blogEntrymodel.date}}</p>
-      <p id="entryTitle">{{blogEntrymodel.title}}</p>
-    </div>
-      <img src="{{blogEntrymodel.picFile}}"alt="{{blogEntrymodel.picDiscription}}" class="blogEntryPicture">
-    <div class="blogEntryText">
-      <p>{{blogEntrymodel.text}}</p>
-    </div>
-  </div>
 </div>

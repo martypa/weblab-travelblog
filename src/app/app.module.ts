@@ -15,12 +15,14 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { TravelBlogComponent } from './travel-blog/travel-blog.component';
+import { TravelBlogEntryComponent } from './travel-blog-entry/travel-blog-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    TravelBlogComponent
+    TravelBlogComponent,
+    TravelBlogEntryComponent
   ],
   imports: [
     BrowserModule,

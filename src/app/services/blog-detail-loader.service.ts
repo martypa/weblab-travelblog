@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BlogDetailMock} from '../mocks/BlogDetailMock';
 import {BlogHeaderModel} from '../travel-blog/BlogHeaderModel';
-import {BlogEntryModel} from '../travel-blog/BlogEntryModel';
+import {BlogEntryModel} from '../travel-blog-entry/BlogEntryModel';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class BlogDetailLoaderService {
     return this.detailBlogMock.getMockHeader();
   }
 
-  getDetailBlogEntryMock(): BlogEntryModel {
+  getDetailBlogEntryMock(): BlogEntryModel[] {
     return this.detailBlogMock.getMockEntry();
   }
 
