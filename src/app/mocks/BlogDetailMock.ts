@@ -7,13 +7,16 @@ export class BlogDetailMock {
   private id = 1;
 
   private header: BlogHeaderModel = {
+    _id: '',
     title: 'Meine Reise nach China',
     location: 'China',
     duration: '25.04.2006 - 28.05.2006',
-    description: 'In dieser Reise ging es zum ersten Mal nach China...'
+    description: 'In dieser Reise ging es zum ersten Mal nach China...',
+    type: 'header'
   };
 
   private firstEntry: BlogEntryModel = {
+    _id: '',
     date: '26.04.2006',
     title: 'Arrive in Peking',
     picFile: '../../assets/image/chinaReise.jpg',
@@ -23,11 +26,13 @@ export class BlogDetailMock {
       'rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor ' +
       'sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna ' +
       'aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd ' +
-      'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+      'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    type: 'entry'
   };
 
 
   private second: BlogEntryModel = {
+    _id: '',
     date: '26.04.2006',
     title: 'Arrive in Peking',
     picFile: '../../assets/image/chinaReise.jpg',
@@ -37,7 +42,8 @@ export class BlogDetailMock {
       'rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor ' +
       'sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna ' +
       'aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd ' +
-      'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+      'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    type: ''
   };
 
 

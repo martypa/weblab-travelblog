@@ -17,8 +17,8 @@ export class TravelBlogComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  public headermodel: BlogHeaderModel = {title: '', description: '', duration: '', location: ''};
-  public posts: BlogEntryModel[] = [{title: '', date: '', picDiscription: '', picFile: '', text: ''}];
+  public headermodel: BlogHeaderModel = {_id: '', title: '', description: '', duration: '', location: '', type: 'header'};
+  public posts: BlogEntryModel[] = [{_id:'', title: '', date: '', picDiscription: '', picFile: '', text: '', type: 'entry'}];
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
