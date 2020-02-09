@@ -11,7 +11,8 @@ import {Observable} from 'rxjs';
 export class TableLoaderService {
 
   private blogMock: BlogTableMock = new BlogTableMock();
-  private tableUrlLocal = '../../assets/blogTable.json'
+  private tableUrlLocal = '../../assets/blogTable.json';
+  private tableUrlRemote = 'http://localhost:3000/blog/';
 
   constructor(
     private http: HttpClient,
@@ -22,7 +23,7 @@ export class TableLoaderService {
   }
 
   getBlogTable(): Observable<BlogTableModel[]> {
-    return this.http.get<BlogTableModel[]>(this.tableUrlLocal);
+    return this.http.get<BlogTableModel[]>(this.tableUrlRemote);
   }
 
 }

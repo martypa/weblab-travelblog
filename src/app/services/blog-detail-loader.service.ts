@@ -12,6 +12,7 @@ export class BlogDetailLoaderService {
 
   private detailBlogMock: BlogDetailMock = new BlogDetailMock();
   private blogUrlLocal = '../../assets/blogs';
+  private blogUrlRemote = 'http://localhost:3000/blog'
 
   constructor(
     private http: HttpClient,
@@ -26,11 +27,11 @@ export class BlogDetailLoaderService {
   }
 
   getBlogHeader(id: number): Observable<BlogHeaderModel> {
-    return this.http.get<BlogHeaderModel>(this.blogUrlLocal + '/' + id + '/header.json');
+    return this.http.get<BlogHeaderModel>(this.blogUrlLocal + '/header/' + id);
   }
 
   getBlogEntries(id: number): Observable<BlogEntryModel[]> {
-    return this.http.get<BlogEntryModel[]>(this.blogUrlLocal + '/' + id + '/blogEntries.json');
+    return this.http.get<BlogEntryModel[]>(this.blogUrlLocal + '/entries/' + id);
   }
 
 
