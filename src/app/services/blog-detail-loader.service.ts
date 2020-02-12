@@ -34,9 +34,9 @@ export class BlogDetailLoaderService {
     return this.http.get<BlogEntryModel[]>(this.blogUrlRemote + '/entries/' + id);
   }
 
-
-
-
+  getBlogImage(picName: string): Observable<Blob> {
+    return this.http.get<Blob>(this.blogUrlRemote + '/picture/' + picName, {responseType: 'blob' as 'json'});
+  }
 
 
 }

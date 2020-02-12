@@ -1,5 +1,5 @@
 <div class="main">
-  <div id="title"><h1>Welcome to Patrick's travel blog</h1></div>
+  <div id="title" routerLink="dashboard"><h1>Welcome to Patrick's travel blog</h1></div>
 
   <mat-toolbar>
 
@@ -7,13 +7,17 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button *ngIf="true" mat-menu-item>
+      <button *ngIf="true" mat-menu-item (click)="openLogin()">
         <mat-icon>supervised_user_circle</mat-icon>
         <span>Anmelden</span>
       </button>
       <button *ngIf="true" mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
+      </button>
+      <button *ngIf="true" mat-menu-item routerLink="/createBlogEntry">
+        <mat-icon>note_add</mat-icon>
+        <span>Create Blog Entry</span>
       </button>
     </mat-menu>
 

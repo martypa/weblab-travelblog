@@ -7,23 +7,29 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   _MatMenuDirectivesModule,
-  MatButtonModule, MatCardModule,
+  MatButtonModule, MatCardModule, MatDatepickerModule, MatFormFieldModule,
   MatIconModule,
-  MatMenuModule,
-  MatRippleModule,
+  MatMenuModule, MatNativeDateModule,
+  MatRippleModule, MatSelectModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import { TravelBlogComponent } from './travel-blog/travel-blog.component';
 import { TravelBlogEntryComponent } from './travel-blog/travel-blog-entry/travel-blog-entry.component';
 import {HttpClientModule} from '@angular/common/http';
+import {LoginComponent} from './authentication/login/login.component';
+import {AuthenticationModule} from './authentication/authentication.module';
+import { BlogEditingComponent } from './travel-blog/blog-editing/blog-editing.component';
+import {MatInputModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     TravelBlogComponent,
-    TravelBlogEntryComponent
+    TravelBlogEntryComponent,
+    BlogEditingComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,13 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
+    AuthenticationModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

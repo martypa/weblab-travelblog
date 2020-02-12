@@ -6,4 +6,5 @@ export interface BlogEntryModel {
   picDiscription: string;
   text: string;
   type: string;
+  picutre: Blob;
 }

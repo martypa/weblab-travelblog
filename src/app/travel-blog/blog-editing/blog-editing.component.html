@@ -1,0 +1,42 @@
+
+
+<h2 class="title">{{title}}</h2>
+
+<div class="blog-entry-form">
+<form class="blog-entry-text"  #blogEntry="ngForm" (ngSubmit)="createEntry(blogEntry)">
+
+  <mat-form-field color="primary">
+    <mat-label>Select Blog</mat-label>
+    <mat-select class="select-entry" name="selectedBlog" ngModel>
+      <mat-option *ngFor="let blog of blogs" [value]="blog.id">
+        {{blog.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field color="primary">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" name="blogDate" ngModel>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="text-entry">
+    <mat-label>Blog Entry Title</mat-label>
+    <input matInput placeholder="Ex. Day 5: <Location>" name="blogTitle" ngModel>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="text-entry">
+    <mat-label>Blog Entry Text</mat-label>
+    <textarea matInput placeholder="Ex. The journey was..." name="blogText" ngModel></textarea>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="Basic" class="SubmitButton" type="submit">Create Entry</button>
+</form>
+</div>

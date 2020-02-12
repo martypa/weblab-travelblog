@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {BlogDetailLoaderService} from '../services/blog-detail-loader.service';
 import {BlogHeaderModel} from './BlogHeaderModel';
 import {BlogEntryModel} from './travel-blog-entry/BlogEntryModel';
@@ -18,7 +18,7 @@ export class TravelBlogComponent implements OnInit {
   ) { }
 
   public headermodel: BlogHeaderModel = {_id: '', title: '', description: '', duration: '', location: '', type: 'header'};
-  public posts: BlogEntryModel[] = [{_id:'', title: '', date: '', picDiscription: '', picFile: '', text: '', type: 'entry'}];
+  public posts: BlogEntryModel[] = [{_id: '', title: '', date: '', picDiscription: '', picFile: '', text: '', type: 'entry', picutre: null}];
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,7 +27,12 @@ export class TravelBlogComponent implements OnInit {
     });
     this.blogLoader.getBlogEntries(Number(id)).subscribe(entries => {
       this.posts = entries;
+      this.posts.forEach(post => {
+        this.blogLoader.getBlogImage(post.picFile).subscribe(image => {
+           post.picutre = image;
+        });
+      });
     });
-  }
 
+  }
 }
