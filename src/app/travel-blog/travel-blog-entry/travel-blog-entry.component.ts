@@ -13,7 +13,7 @@ export class TravelBlogEntryComponent implements OnInit {
   @Input()
   date: string;
   @Input()
-  pictureFile: string;
+  pictureFile: any;
   @Input()
   pictureDiscription: string;
   @Input()

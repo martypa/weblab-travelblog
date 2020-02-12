@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {BlogDetailMock} from '../mocks/BlogDetailMock';
 import {BlogHeaderModel} from '../travel-blog/BlogHeaderModel';
 import {BlogEntryModel} from '../travel-blog/travel-blog-entry/BlogEntryModel';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +35,9 @@ export class BlogDetailLoaderService {
     return this.http.get<BlogEntryModel[]>(this.blogUrlRemote + '/entries/' + id);
   }
 
-  getBlogImage(picName: string): Observable<Blob> {
-    return this.http.get<Blob>(this.blogUrlRemote + '/picture/' + picName, {responseType: 'blob' as 'json'});
+  getBlogImage(picName: string): any {
+    return this.http.get<Blob>(this.blogUrlRemote + '/picture/' + picName,
+      {responseType: 'blob' as 'json'});
   }
 
 

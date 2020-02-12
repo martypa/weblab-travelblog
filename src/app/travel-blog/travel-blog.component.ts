@@ -18,20 +18,27 @@ export class TravelBlogComponent implements OnInit {
   ) { }
 
   public headermodel: BlogHeaderModel = {_id: '', title: '', description: '', duration: '', location: '', type: 'header'};
-  public posts: BlogEntryModel[] = [{_id: '', title: '', date: '', picDiscription: '', picFile: '', text: '', type: 'entry', picutre: null}];
+  public posts: BlogEntryModel[] = [{_id: '', title: '', date: '', picDiscription: '',
+    picFile: '', text: '', type: 'entry', picutre: null}];
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.blogLoader.getBlogHeader(Number(id)).subscribe(header => {
       this.headermodel = header;
     });
+
     this.blogLoader.getBlogEntries(Number(id)).subscribe(entries => {
-      this.posts = entries;
-      this.posts.forEach(post => {
+      const tmp: BlogEntryModel[] = entries;
+      tmp.forEach(post => {
         this.blogLoader.getBlogImage(post.picFile).subscribe(image => {
-           post.picutre = image;
+           const reader = new FileReader();
+           reader.addEventListener('load', () => {
+              this.posts.filter(x => x._id === post._id)[0].picutre = reader.result;
+           }, false);
+           reader.readAsDataURL(image);
         });
       });
+      this.posts = tmp;
     });
 
   }
