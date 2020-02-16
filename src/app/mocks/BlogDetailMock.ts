@@ -28,7 +28,8 @@ export class BlogDetailMock {
       'aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd ' +
       'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     type: 'entry',
-    picutre: null
+    picutre: null,
+    blog: 1
   };
 
 
@@ -45,7 +46,8 @@ export class BlogDetailMock {
       'aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd ' +
       'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     type: '',
-    picutre:  null
+    picutre:  null,
+    blog: 1
   };
 
 

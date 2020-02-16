@@ -22,6 +22,8 @@ import {AuthenticationModule} from './authentication/authentication.module';
 import { BlogEditingComponent } from './travel-blog/blog-editing/blog-editing.component';
 import {MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import {FileUploadModule} from 'ng2-file-upload';
+
 
 @NgModule({
   declarations: [
@@ -31,27 +33,28 @@ import {FormsModule} from '@angular/forms';
     TravelBlogEntryComponent,
     BlogEditingComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatRippleModule,
-    _MatMenuDirectivesModule,
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    HttpClientModule,
-    AuthenticationModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatRippleModule,
+        _MatMenuDirectivesModule,
+        MatIconModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        HttpClientModule,
+        AuthenticationModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        FormsModule,
+        FileUploadModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
