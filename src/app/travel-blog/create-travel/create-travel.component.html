@@ -1,0 +1,26 @@
+<h2 class="title">{{title}}</h2>
+
+<div class="blog-entry-form">
+  <form class="blog-entry-text"  #newTravel="ngForm" (ngSubmit)="createEntry(newTravel)">
+    <mat-form-field class="text-entry">
+      <mat-label>Travel Title</mat-label>
+      <input matInput placeholder="Ex. Meine Reise nach China" name="travelTitle" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="text-entry">
+      <mat-label>Travel Destination</mat-label>
+      <input matInput placeholder="Ex. Switzerland" name="travelDestination" ngModel>
+    </mat-form-field>
+    <mat-form-field class="text-entry">
+      <mat-label>Travel Duration</mat-label>
+      <input matInput placeholder="Ex. 01.01.2020 - 31.01.2020" name="travelDuration" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="text-entry">
+      <mat-label>Travel short description</mat-label>
+      <textarea matInput placeholder="Ex. In dieser Reise ging es nach..." name="travelDescription" ngModel></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="Basic" class="SubmitButton" type="submit">Create Travel</button>
+  </form>
+</div>

@@ -26,11 +26,11 @@ export class BlogDetailLoaderService {
     return this.detailBlogMock.getMockEntry();
   }
 
-  getBlogHeader(id: number): Observable<BlogHeaderModel> {
+  getBlogHeader(id: string): Observable<BlogHeaderModel> {
     return this.http.get<BlogHeaderModel>(this.blogUrlRemote + '/header/' + id);
   }
 
-  getBlogEntries(id: number): Observable<BlogEntryModel[]> {
+  getBlogEntries(id: string): Observable<BlogEntryModel[]> {
     return this.http.get<BlogEntryModel[]>(this.blogUrlRemote + '/entries/' + id);
   }
 

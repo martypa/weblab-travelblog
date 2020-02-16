@@ -23,6 +23,7 @@ import { BlogEditingComponent } from './travel-blog/blog-editing/blog-editing.co
 import {MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {FileUploadModule} from 'ng2-file-upload';
+import { CreateTravelComponent } from './travel-blog/create-travel/create-travel.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {FileUploadModule} from 'ng2-file-upload';
     TravelBlogComponent,
     TravelBlogEntryComponent,
     BlogEditingComponent,
+    CreateTravelComponent,
   ],
     imports: [
         BrowserModule,

@@ -23,11 +23,11 @@ export class TravelBlogComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.blogLoader.getBlogHeader(Number(id)).subscribe(header => {
+    this.blogLoader.getBlogHeader(id).subscribe(header => {
       this.headermodel = header;
     });
 
-    this.blogLoader.getBlogEntries(Number(id)).subscribe(entries => {
+    this.blogLoader.getBlogEntries(id).subscribe(entries => {
       const tmp: BlogEntryModel[] = entries;
       tmp.forEach(post => {
         this.blogLoader.getBlogImage(post.picFile).subscribe(image => {
