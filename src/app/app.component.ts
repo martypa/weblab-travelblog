@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import {MatDialog} from '@angular/material';
-import {LoginComponent} from './authentication/login/login.component';
-import {LoginModel} from './authentication/login/loginModel';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from './services/authentication.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,25 @@ import {LoginModel} from './authentication/login/loginModel';
 export class AppComponent {
 
   title = 'weblab-travelblog';
+  username: string;
+  login: boolean;
+  createTravel: boolean;
+  createBlogEntry: boolean;
+  logout: boolean;
 
   constructor(
+    private authServ: AuthenticationService,
+    private router: Router,
   ) {
   }
+
 
   setTitle(title: string) {
     this.title = title;
   }
 
+  logOut() {
+    this.authServ.logout();
+    this.router.navigate(['/login']);
+  }
 }

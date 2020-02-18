@@ -13,6 +13,7 @@
       <input type="password" matInput name="password" ngModel>
     </mat-form-field>
     <br>
+    <p *ngIf="showError" class="failLogin">Login Failed!</p>
     <button mat-raised-button color="Basic" class="SubmitButton" type="submit">Login</button>
   </form>
 </div>

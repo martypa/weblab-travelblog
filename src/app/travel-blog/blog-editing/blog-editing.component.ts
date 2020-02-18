@@ -6,6 +6,7 @@ import {NgForm} from '@angular/forms';
 import {BlogSaveService} from '../../services/blog-save.service';
 import {FileUploader} from 'ng2-file-upload';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../../services/authentication.service';
 
 
 
@@ -20,15 +21,13 @@ export class BlogEditingComponent implements OnInit {
   blogs: BlogTableModel[] = [];
   form: NgForm;
 
-  public uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/blog/upload/Picture',
-    itemAlias: 'image'
-  });
+  public uploader: FileUploader;
 
   constructor(
     private blogTableLoader: TableLoaderService,
     private blogSaver: BlogSaveService,
     private router: Router,
+    private authService: AuthenticationService,
   ) { }
 
   ngOnInit() {
@@ -36,6 +35,7 @@ export class BlogEditingComponent implements OnInit {
     this.blogTableLoader.getBlogTable().subscribe(data => {
       this.blogs = data;
     });
+    this.uploader = this.createFileLoader();
     this.initUploader();
   }
 
@@ -69,6 +69,13 @@ export class BlogEditingComponent implements OnInit {
     this.blogSaver.saveBlogEntry(entry).subscribe(data => {
       this.router.navigate(['/dashboard']);
     });
+  }
+
+  private createFileLoader(): FileUploader {
+      return new FileUploader({
+        url: 'http://localhost:3000/blog/upload/Picture',
+        itemAlias: 'image',
+      });
   }
 
 

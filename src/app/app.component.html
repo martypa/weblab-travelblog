@@ -2,30 +2,29 @@
   <div id="title" routerLink="dashboard"><h1>Welcome to Patrick's travel blog</h1></div>
 
   <mat-toolbar>
-
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button *ngIf="true" mat-menu-item routerLink="/login">
+      <button *ngIf="login" mat-menu-item routerLink="/login">
         <mat-icon>supervised_user_circle</mat-icon>
         <span>Anmelden</span>
       </button>
-      <button *ngIf="true" mat-menu-item routerLink="/createTravel">
+      <button *ngIf="createTravel" mat-menu-item routerLink="/createTravel">
         <mat-icon>card_travel</mat-icon>
         <span>Create new Travel</span>
       </button>
-      <button *ngIf="true" mat-menu-item routerLink="/createBlogEntry">
+      <button *ngIf="createBlogEntry" mat-menu-item routerLink="/createBlogEntry">
         <mat-icon>note_add</mat-icon>
         <span>Create Blog Entry</span>
       </button>
-      <button *ngIf="true" mat-menu-item>
+      <button *ngIf="logout" mat-menu-item (click)="logOut()">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>
     </mat-menu>
 
-    <div id="user">User:</div>
+    <div id="user">User: {{username}}</div>
   </mat-toolbar>
 
 

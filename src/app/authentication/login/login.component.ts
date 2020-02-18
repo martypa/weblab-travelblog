@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import jsSHA from 'jssha';
 import {LoginModel} from './loginModel';
+import {AuthenticationService} from '../../services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +13,31 @@ import {LoginModel} from './loginModel';
 export class LoginComponent implements OnInit {
 
   title = 'User Login';
+  showError: boolean;
 
-  constructor() { }
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.showError = false;
   }
 
   login(loginForm: NgForm) {
-    console.log(atob('asdf'))
     const hash = new jsSHA('SHA-256', 'TEXT');
     hash.update(loginForm.value.password);
     const loginUser: LoginModel = {
-      user: loginForm.value.username,
+      username: loginForm.value.username,
       password: hash.getHash('HEX')
     };
+    this.authService.login(loginUser).subscribe(data => {
+      this.showError = false;
+      this.authService.setUser(data);
+      this.router.navigate(['/dashboard']);
+    }, error => {
+      this.showError = true;
+    });
   }
 
 }
