@@ -1,16 +1,18 @@
-<h1 mat-dialog-title>Travelblog Login</h1>
-<div mat-dialog-content>
-  <p>Please login for made comments or write blogs:</p>
-  <mat-form-field>
-    <mat-label>User</mat-label>
-    <input matInput [(ngModel)]="data.user">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input matInput type="password" [(ngModel)]="data.password">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.password" cdkFocusInitial>Ok</button>
+
+<h2 class="title">{{title}}</h2>
+
+<div class="blog-entry-form">
+  <form class="blog-entry-text"  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <mat-form-field class="text-entry">
+      <mat-label>Username</mat-label>
+      <input matInput name="username" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="text-entry">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput name="password" ngModel>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="Basic" class="SubmitButton" type="submit">Login</button>
+  </form>
 </div>

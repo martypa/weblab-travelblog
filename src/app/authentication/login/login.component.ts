@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {NgForm} from '@angular/forms';
+import jsSHA from 'jssha';
 import {LoginModel} from './loginModel';
 
 @Component({
@@ -9,17 +10,21 @@ import {LoginModel} from './loginModel';
 })
 export class LoginComponent implements OnInit {
 
+  title = 'User Login';
 
-
-  constructor(
-    public dialogRef: MatDialogRef<LoginComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: LoginModel) { }
-
-    onNoClick(): void {
-      this.dialogRef.close();
-    }
+  constructor() { }
 
   ngOnInit() {
+  }
+
+  login(loginForm: NgForm) {
+    console.log(atob('asdf'))
+    const hash = new jsSHA('SHA-256', 'TEXT');
+    hash.update(loginForm.value.password);
+    const loginUser: LoginModel = {
+      user: loginForm.value.username,
+      password: hash.getHash('HEX')
+    };
   }
 
 }

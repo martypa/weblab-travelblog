@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 export class DashboardComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['Title', 'Destination', 'Date', 'Length'];
+  displayedColumns: string[] = ['Title', 'Destination', 'Date'];
   dataSource: BlogTableModel[] = [];
 
   constructor(

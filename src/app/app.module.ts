@@ -17,13 +17,12 @@ import {
 import { TravelBlogComponent } from './travel-blog/travel-blog.component';
 import { TravelBlogEntryComponent } from './travel-blog/travel-blog-entry/travel-blog-entry.component';
 import {HttpClientModule} from '@angular/common/http';
-import {LoginComponent} from './authentication/login/login.component';
-import {AuthenticationModule} from './authentication/authentication.module';
 import { BlogEditingComponent } from './travel-blog/blog-editing/blog-editing.component';
 import {MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {FileUploadModule} from 'ng2-file-upload';
 import { CreateTravelComponent } from './travel-blog/create-travel/create-travel.component';
+import {LoginComponent} from './authentication/login/login.component';
 
 
 @NgModule({
@@ -34,6 +33,7 @@ import { CreateTravelComponent } from './travel-blog/create-travel/create-travel
     TravelBlogEntryComponent,
     BlogEditingComponent,
     CreateTravelComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
@@ -48,7 +48,6 @@ import { CreateTravelComponent } from './travel-blog/create-travel/create-travel
         MatButtonModule,
         MatCardModule,
         HttpClientModule,
-        AuthenticationModule,
         MatFormFieldModule,
         MatSelectModule,
         MatInputModule,
