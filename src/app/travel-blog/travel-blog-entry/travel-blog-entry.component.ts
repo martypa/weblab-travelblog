@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BlogEntryModel} from './BlogEntryModel';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-travel-blog-entry',
@@ -8,6 +8,8 @@ import {BlogEntryModel} from './BlogEntryModel';
 })
 export class TravelBlogEntryComponent implements OnInit {
 
+  @Input()
+  id: any;
   @Input()
   title: string;
   @Input()
@@ -18,10 +20,21 @@ export class TravelBlogEntryComponent implements OnInit {
   pictureDiscription: string;
   @Input()
   text: string;
+  creatorUser: boolean;
 
-  constructor() { }
+  constructor(
+    private authentication: AuthenticationService,
+  ) { }
 
   ngOnInit() {
+    if (this.authentication.getUser().role == 'creator') {
+      this.creatorUser = true;
+    }
+
+  }
+
+  delteUser() {
+    console.log('Hallo');
   }
 
 }

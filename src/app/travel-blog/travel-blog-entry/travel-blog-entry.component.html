@@ -3,6 +3,7 @@
     <div class="entryTitle">
       <p>{{date}}</p>
       <p id="entryTitle">{{title}}</p>
+      <div (click)="delteUser()" *ngIf="creatorUser"><mat-icon id="deleteIcon">delete_sweep</mat-icon></div>
     </div>
     <img [src]="pictureFile"  alt="{{pictureDiscription}}" class="blogEntryPicture">
     <div class="blogEntryText">
