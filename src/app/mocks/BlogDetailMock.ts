@@ -29,7 +29,8 @@ export class BlogDetailMock {
       'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     type: 'entry',
     picutre: null,
-    blog: 1
+    blog: 1,
+    id: NaN,
   };
 
 
@@ -47,7 +48,8 @@ export class BlogDetailMock {
       'gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     type: '',
     picutre:  null,
-    blog: 1
+    blog: 1,
+    id: NaN,
   };
 
 

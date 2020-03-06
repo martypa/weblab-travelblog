@@ -4,6 +4,8 @@ import {BlogHeaderModel} from './BlogHeaderModel';
 import {BlogEntryModel} from './travel-blog-entry/BlogEntryModel';
 import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
+import {BlogEntryDeleteService} from '../services/blog-entry-delete.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-travel-blog',
@@ -11,23 +13,27 @@ import {filter, map} from 'rxjs/operators';
   styleUrls: ['./travel-blog.component.scss']
 })
 export class TravelBlogComponent implements OnInit {
+  private subscription: Subscription;
 
   constructor(
     private blogLoader: BlogDetailLoaderService,
     private route: ActivatedRoute,
+    private deleteService: BlogEntryDeleteService,
   ) { }
 
+  private id;
   public headermodel: BlogHeaderModel = {_id: '', title: '', description: '', duration: '', location: '', type: 'header'};
   public posts: BlogEntryModel[] = [{_id: '', title: '', date: '', picDiscription: '',
-    picFile: '', text: '', type: 'entry', picutre: null, blog: 0}];
+    picFile: '', text: '', type: 'entry', picutre: null, blog: 0, id: NaN}];
+
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.blogLoader.getBlogHeader(id).subscribe(header => {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.blogLoader.getBlogHeader(this.id).subscribe(header => {
       this.headermodel = header;
     });
 
-    this.blogLoader.getBlogEntries(id).subscribe(entries => {
+    this.blogLoader.getBlogEntries(this.id).subscribe(entries => {
       const tmp: BlogEntryModel[] = entries;
       tmp.forEach(post => {
         this.blogLoader.getBlogImage(post.picFile).subscribe(image => {
@@ -40,6 +46,15 @@ export class TravelBlogComponent implements OnInit {
       });
       this.posts = tmp;
     });
-
+    this.subscription = this.deleteService.observerBlogDelete.subscribe(item => {
+      const h = this.posts.find(element => element.picutre == item.pictureFile);
+      if (h !== undefined) {
+        this.posts = this.posts.filter(obj => obj !== h);
+        this.deleteService.removeRemote(h._id, this.id).subscribe(response => {
+            console.log(response);
+        });
+      }
+    });
   }
+
 }

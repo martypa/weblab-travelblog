@@ -65,6 +65,7 @@ export class BlogEditingComponent implements OnInit {
       picDiscription: form.value.blogDate + '_' + form.value.blogTitle,
       text: form.value.blogText,
       blog: form.value.selectedBlog,
+      id: NaN,
     };
     this.blogSaver.saveBlogEntry(entry).subscribe(data => {
       this.router.navigate(['/dashboard']);

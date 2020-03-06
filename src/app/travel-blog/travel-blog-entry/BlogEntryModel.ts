@@ -8,4 +8,5 @@ export interface BlogEntryModel {
   type: string;
   picutre: any;
   blog: number;
+  id: number;
 }

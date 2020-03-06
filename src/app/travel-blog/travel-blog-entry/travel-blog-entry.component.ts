@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../services/authentication.service';
+import {BlogEntryDeleteService} from '../../services/blog-entry-delete.service';
 
 @Component({
   selector: 'app-travel-blog-entry',
@@ -9,7 +10,7 @@ import {AuthenticationService} from '../../services/authentication.service';
 export class TravelBlogEntryComponent implements OnInit {
 
   @Input()
-  id: any;
+  id: string;
   @Input()
   title: string;
   @Input()
@@ -20,10 +21,12 @@ export class TravelBlogEntryComponent implements OnInit {
   pictureDiscription: string;
   @Input()
   text: string;
-  creatorUser: boolean;
+
+  creatorUser;
 
   constructor(
     private authentication: AuthenticationService,
+    private deleteService: BlogEntryDeleteService,
   ) { }
 
   ngOnInit() {
@@ -34,7 +37,7 @@ export class TravelBlogEntryComponent implements OnInit {
   }
 
   delteUser() {
-    console.log('Hallo');
+    this.deleteService.delete(this);
   }
 
 }
