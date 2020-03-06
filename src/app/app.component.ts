@@ -30,6 +30,11 @@ export class AppComponent {
 
   logOut() {
     this.authServ.logout();
+    this.login = true;
+    this.createBlogEntry = false;
+    this.createTravel = false;
+    this.logout = false;
+    this.username = '';
     this.router.navigate(['/login']);
   }
 }
